@@ -5,12 +5,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-
+import AuthActions from "../actions/auth-actions";
 
 export default function SignInForm() {
   return (
@@ -18,29 +18,36 @@ export default function SignInForm() {
       <CardHeader>
         <CardTitle>Entrar</CardTitle>
       </CardHeader>
-      <CardContent>
-      <form>
+      <form action={AuthActions.login}>
+        <CardContent>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Email</Label>
-              <Input id="email" placeholder="Seu email" required />
+              <Input id="email" name="email" placeholder="Seu email" required />
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Senha</Label>
-              <Input id="password" placeholder="Uma senha forte" required />
+              <Input
+                id="password"
+                name="password"
+                placeholder="Uma senha forte"
+                required
+              />
             </div>
           </div>
-        </form>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button variant="outline">Entrar</Button>
-        <Link
-          href="/pages/sign-up"
-          className={buttonVariants({ variant: "link" })}
-        >
-          Não possuo conta
-        </Link>
-      </CardFooter>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button type="submit" variant="outline">
+            Entrar
+          </Button>
+          <Link
+            href="/pages/sign-up"
+            className={buttonVariants({ variant: "link" })}
+          >
+            Não possuo conta
+          </Link>
+        </CardFooter>
+      </form>
     </Card>
   );
 }
