@@ -46,7 +46,7 @@ export default function SignUpForm() {
             href="/pages/sign-in"
             className={buttonVariants({ variant: "link" })}
           >
-            Já tenho conta
+            Fazer login
           </Link>
         </CardFooter>
       </form>

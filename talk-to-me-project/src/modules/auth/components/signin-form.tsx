@@ -31,6 +31,7 @@ export default function SignInForm() {
                 id="password"
                 name="password"
                 placeholder="Uma senha forte"
+                type="password"
                 required
               />
             </div>
@@ -44,7 +45,7 @@ export default function SignInForm() {
             href="/pages/sign-up"
             className={buttonVariants({ variant: "link" })}
           >
-            Não possuo conta
+            Criar conta
           </Link>
         </CardFooter>
       </form>

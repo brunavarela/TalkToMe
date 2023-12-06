@@ -29,9 +29,24 @@ async function createSessionToken(payload = {}) {
   });
 }
 
+async function isSessionValid() {
+  const sessionCookie = cookies().get("session");
+
+  if (sessionCookie) {
+    const { value } = sessionCookie;
+    const { exp } = await openSessionToken(value);
+    const currentDate = new Date().getTime();
+
+    return ((exp as number) * 1000) > currentDate;
+  }
+
+  return false;
+}
+
 const AuthService = {
   openSessionToken,
   createSessionToken,
+  isSessionValid,
 };
 
 export default AuthService;
