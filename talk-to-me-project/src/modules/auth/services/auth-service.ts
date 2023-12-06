@@ -37,16 +37,21 @@ async function isSessionValid() {
     const { exp } = await openSessionToken(value);
     const currentDate = new Date().getTime();
 
-    return ((exp as number) * 1000) > currentDate;
+    return (exp as number) * 1000 > currentDate;
   }
 
   return false;
+}
+
+function destroySession() {
+  cookies().delete("session");
 }
 
 const AuthService = {
   openSessionToken,
   createSessionToken,
   isSessionValid,
+  destroySession,
 };
 
 export default AuthService;

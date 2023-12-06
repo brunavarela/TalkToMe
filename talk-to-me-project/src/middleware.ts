@@ -26,6 +26,12 @@ export async function middleware(req: NextRequest) {
   const session = await AuthService.isSessionValid(); // Validar a sessão do JWT
 
   if (!session) {
+    const isAPIRoute = pathname.startsWith("/api");
+
+    if (isAPIRoute) {
+      return NextResponse.json({ message: "Não autorizado" }, { status: 401 });
+    }
+
     return NextResponse.redirect(new URL("/pages/sign-in", req.url));
   }
 
