@@ -2,15 +2,30 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import secondaryLogo from "./assets/secondary-logo.png";
 import primaryLogo from "./assets/primary-logo.png";
+import bgImage from "./assets/bg-image.png";
 import { FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
   return (
     <body className="h-max">
-      <main className="flex bg-gradient-to-b from-background to-foreground min-h-screen items-center p-24">
+      <nav className="w-full flex bg-background">
+        <div className="p-6 w-1/2">
+          <img src={primaryLogo.src} className="w-44"></img>
+        </div>
+        <div className="p-6 flex justify-end w-1/2">
+          <div className="flex space-x-2">
+            <Button variant={"secondary"}>
+              <Link href="/pages/sign-in">Entrar</Link>
+            </Button>
+            <Button>
+              <Link href="/pages/sign-up">Criar conta</Link>
+            </Button>
+          </div>
+        </div>
+      </nav>
+      <main className="flex bg-gradient-to-b from-background to-foreground ">
         <div className="w-1/2 flex flex-col items-center">
           <div className="w-1/2 flex flex-col items-center space-y-3 mb-16">
-            <img src={primaryLogo.src} className="w-44 h-auto"></img>
             <text className="text-xl text-primary">
               Encontre. Converse. Confie.
             </text>
@@ -18,16 +33,10 @@ export default function Home() {
           <img src={secondaryLogo.src} className="w-96 h-auto"></img>
         </div>
         <div className="w-1/2 flex flex-col items-center">
-          <text className="text-3xl text-primary font-semibold px-32 text-center mb-20">
-            Boa vindas à sua nova plataforma de chat.
-          </text>
-          <div className="flex flex-col items-center space-y-3">
-            <Button>
-              <Link href="/pages/sign-in">Entrar</Link>
-            </Button>
-            <Button variant={"secondary"}>
-              <Link href="/pages/sign-up">Criar conta</Link>
-            </Button>
+          <img src={bgImage.src} className="w-full h-auto"></img>
+          <div className="absolute right-12 top-40 text-start">
+            <p className="text-2xl text-primary font-light">Crie sua conta.</p>
+            <p className="text-2xl text-primary font-light">É grátis!</p>
           </div>
         </div>
       </main>
