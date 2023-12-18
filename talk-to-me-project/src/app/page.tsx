@@ -1,66 +1,76 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { FaLinkedin } from "react-icons/fa";
 import secondaryLogo from "./assets/secondary-logo.png";
 import primaryLogo from "./assets/primary-logo.png";
 import bgImage from "./assets/bg-image.png";
-import { FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <body className="h-max">
-      <nav className="w-full absolute flex bg-background">
-        <div className="p-4 w-1/2">
-          <img src={primaryLogo.src} className="w-44"></img>
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-background to-foreground">
+      <nav className="w-full p-4 absolute flex bg-background  z-10">
+        <div className="w-1/2">
+          <img src={primaryLogo.src} className="w-44" alt="Primary Logo" />
         </div>
-        <div className="p-4 flex justify-end w-1/2">
+        <div className="w-1/2 flex justify-end">
           <div className="flex space-x-2">
-            <Button variant={"secondary"}>
+            <Button variant={"secondary"} size={"sm"} className="px-2 py-2">
               <Link href="/pages/sign-in">Entrar</Link>
-            </Button>
-            <Button>
+            </Button >
+            <Button size={"sm"}  className="px-2">
               <Link href="/pages/sign-up">Criar conta</Link>
             </Button>
           </div>
         </div>
       </nav>
-      <main className="flex bg-gradient-to-b from-background to-foreground ">
-        <div className="w-1/2 flex flex-col items-center mt-40">
-          <div className="w-100 flex flex-col space-y-1 mb-20">
-            <text className="text-4xl text-primary">
-              Boas vindas à sua <span className="text-foreground font-bold">nova</span>
-            </text>
-            <text className="text-4xl text-primary text-center">
-              <span className="text-foreground font-bold">plataforma</span> de <span className="text-foreground font-bold">chat</span>.
-            </text>
+      <main className="flex-grow flex flex-col-reverse lg:flex-row ">
+        <div className="lg:w-1/2 flex flex-col items-center mt-6 lg:mt-40">
+          <div className="mb-12 lg:mb-20 text-3xl lg:text-4xl text-primary text-center">
+            <p>
+              Boas vindas à sua{" "}
+              <span className="lg:text-foreground font-bold">nova</span>
+            </p>
+            <p>
+              <span className="lg:text-foreground font-bold">plataforma</span> de{" "}
+              <span className="lg:text-foreground font-bold">chat</span>.
+            </p>
           </div>
-          <img src={secondaryLogo.src} className="2xl:w-auto h-auto xl:w-96"></img>
+          <img
+            src={secondaryLogo.src}
+            className="w-72 mb-12 2xl:w-auto lg:w-96 xl:w-96 h-auto "
+            alt="Secondary Logo"
+          />
         </div>
-        <div className="w-1/2 flex flex-col items-center">
-          <img src={bgImage.src} className="w-full h-full"></img>
-          <div className="absolute right-14 top-40 text-start">
-            <p className="text-2xl text-primary font-light">Crie sua conta.</p>
-            <p className="text-2xl text-primary font-light">É grátis!</p>
+        <div className="lg:w-1/2 relative">
+          <img
+            src={bgImage.src}
+            className="w-full h-full object-cover"
+            alt="Background Image"
+          />
+          <div className="absolute right-10 top-24 lg:right-14 lg:top-40 text-start text-base lg:text-2xl">
+            <p className=" text-primary font-light">Crie sua conta.</p>
+            <p className=" text-primary font-light">É grátis!</p>
           </div>
         </div>
       </main>
-      <footer className="bg-background p-12 flex flex-col items-center space-y-6">
-        <nav className="text-primary space-x-6 ">
-          <a>Contato</a>
-          <a>Termos de uso</a>
-          <a>Preferências</a>
+      <footer className="p-12 bg-background text-center mt-auto">
+        <nav className="text-primary space-x-6">
+          <a href="#">Contato</a>
+          <a href="#">Termos de uso</a>
+          <a href="#">Preferências</a>
         </nav>
-        <span className="text-primary">
+        <p className="text-primary my-4">
           © 2023 BrunaDeveloper. Todos os direitos reservados.
-        </span>
-        <div className="flex text-primary text-4xl"> </div>
-        <Link
-          href="https://www.linkedin.com/in/bruna-varela-borges-1124021b3/"
-          target="_blank"
-          className="flex text-primary text-4xl"
-        >
-          <FaLinkedin />
-        </Link>
+        </p>
+        <div className="flex justify-center text-primary text-4xl space-x-4">
+          <Link
+            href="https://www.linkedin.com/in/bruna-varela-borges-1124021b3/"
+            target="_blank"
+          >
+            <FaLinkedin />
+          </Link>
+        </div>
       </footer>
-    </body>
+    </div>
   );
 }
