@@ -23,7 +23,7 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      <main className="flex-grow flex flex-col-reverse lg:flex-row ">
+      <main className="flex-grow flex flex-col-reverse lg:flex-row">
         <div className="lg:w-1/2 flex flex-col items-center mt-6 lg:mt-40">
           <div className="mb-12 lg:mb-20 text-3xl lg:text-4xl text-primary text-center">
             <p>
@@ -54,12 +54,7 @@ export default function Home() {
         </div>
       </main>
       <footer className="p-12 bg-background text-center mt-auto">
-        <nav className="text-primary space-x-6">
-          <a href="#">Contato</a>
-          <a href="#">Termos de uso</a>
-          <a href="#">Preferências</a>
-        </nav>
-        <p className="text-primary my-4">
+        <p className="text-primary my-4 text-sm">
           © 2023 BrunaDeveloper. Todos os direitos reservados.
         </p>
         <div className="flex justify-center text-primary text-4xl space-x-4">
