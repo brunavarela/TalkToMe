@@ -14,10 +14,10 @@ export default function SignUpPage() {
           />
         </Link>
       </nav>
-      <main className="flex-grow flex flex-col justify-center lg:flex-row">
+      <main className="flex-grow flex flex-col justify-center items-center md:mt-20">
         <div className="flex flex-col text-center space-y-6 text-primary mb-12">
-          <span>Encontre. Converse. Confie.</span>
-          <h1 className="font-bold text-xl">Entrar</h1>
+          <span className="md:text-xl">Encontre. Converse. Confie.</span>
+          <h1 className="font-bold text-xl md:text-2xl">Entrar</h1>
         </div>
         <SignInForm></SignInForm>
       </main>
