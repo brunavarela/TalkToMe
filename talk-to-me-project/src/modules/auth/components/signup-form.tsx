@@ -41,7 +41,7 @@ export default function SignUpForm() {
               Já possui conta?
               <Link
                 href="/pages/sign-in"
-                className="ml-2  border-b border-primary"
+                className="ml-2 border-b border-primary"
               >
                 Entrar
               </Link>
