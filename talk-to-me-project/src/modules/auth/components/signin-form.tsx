@@ -32,7 +32,7 @@ export default function SignInForm() {
           </div>
         </CardContent>
         <CardFooter className="flex flex-col">
-          <Button type="submit">Entrar</Button>
+          <Button type="submit" variant={"secondary"}>Entrar</Button>
           <div className="text-primary text-sm mt-4 w-64 text-center">
             <span>
               Ainda não possui conta?

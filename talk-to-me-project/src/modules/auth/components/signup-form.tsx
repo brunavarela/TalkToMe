@@ -32,7 +32,7 @@ export default function SignUpForm() {
           </div>
         </CardContent>
         <CardFooter className="flex flex-col">
-          <Button type="submit">Criar conta</Button>
+          <Button type="submit" variant={"secondary"}>Criar conta</Button>
           <div className="text-primary text-sm mt-4 w-64 text-center">
             <span>
               Já possui conta?
