@@ -1,11 +1,16 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
 import secondaryLogo from "./assets/secondary-logo.png";
 import primaryLogo from "./assets/primary-logo.png";
 import bgImage from "./assets/bg-image.png";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-background to-foreground">
       <nav className="w-full p-4 absolute flex bg-background  z-10">
@@ -14,11 +19,21 @@ export default function Home() {
         </div>
         <div className="w-1/2 flex justify-end">
           <div className="flex space-x-2">
-            <Button variant={"secondary"} size={"sm"} className="px-2 py-2">
-              <Link href="/pages/sign-in">Entrar</Link>
-            </Button >
-            <Button size={"sm"}  className="px-2">
-              <Link href="/pages/sign-up">Criar conta</Link>
+            <Button
+              variant={"secondary"}
+              size={"sm"}
+              className="px-2 py-2"
+              onClick={() => router.push("/pages/sign-in")}
+            >
+              {" "}
+              Entrar
+            </Button>
+            <Button
+              size={"sm"}
+              className="px-2"
+              onClick={() => router.push("/pages/sign-up")}
+            >
+              Criar conta
             </Button>
           </div>
         </div>
@@ -31,8 +46,8 @@ export default function Home() {
               <span className="lg:text-foreground font-bold">nova</span>
             </p>
             <p>
-              <span className="lg:text-foreground font-bold">plataforma</span> de{" "}
-              <span className="lg:text-foreground font-bold">chat</span>.
+              <span className="lg:text-foreground font-bold">plataforma</span>{" "}
+              de <span className="lg:text-foreground font-bold">chat</span>.
             </p>
           </div>
           <img
