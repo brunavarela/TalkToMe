@@ -27,44 +27,6 @@ export async function createAccount(formData: FormData) {
   redirect("/pages/sign-in");
 }
 
-// async function login(formData: FormData) {
-//   "use server";
-
-//   const email = formData.get("email") as string;
-//   const password = formData.get("password") as string;
-
-//   const user = await prisma.user.findFirst({
-//     where: {
-//       email,
-//     },
-//   });
-
-//   // se o usuário não existir
-//   if (!user) {
-//     //aqui posso usar optmistic update para atualizar a tela
-//     console.log("Error");
-//     redirect("/pages/sign-in");
-//   }
-
-//   const isMatch = await bcrypt.compare(password, user?.password);
-
-//   // se email e senha não forem compatíveis
-//   if (!isMatch) {
-//     console.log("Usuário ou senha inválidos");
-//     redirect("/pages/sign-in");
-//   }
-
-//   // Se o usuário e a senha forem válidos
-//   // criar aqui a sessão com JWT
-//   await AuthService.createSessionToken({
-//     sub: user.id,
-//     name: user.name,
-//     email: user.email,
-//   });
-
-//   redirect("/pages/dashboard");
-// }
-
 export async function login(formData: FormData) {
   "use server";
 
@@ -99,13 +61,5 @@ export async function login(formData: FormData) {
     email: user.email,
   });
   redirect("/pages/dashboard");
-  // retornar true indicando login bem-sucedido
-  return true;
 }
 
-// const AuthActions = {
-//   createAccount,
-//   login,
-// };
-
-// export default AuthActions;

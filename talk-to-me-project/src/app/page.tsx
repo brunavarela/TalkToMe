@@ -70,7 +70,7 @@ export default function Home() {
       </main>
       <footer className="p-12 bg-background text-center mt-auto">
         <p className="text-primary my-4 text-sm">
-          © 2023 BrunaDeveloper. Todos os direitos reservados.
+          © 2023 BrunaDeveloper. Alguns direitos reservados.
         </p>
         <div className="flex justify-center text-primary text-4xl space-x-4">
           <Link

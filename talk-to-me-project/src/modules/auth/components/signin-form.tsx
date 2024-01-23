@@ -28,23 +28,53 @@ export default function SignInForm() {
       <form onSubmit={handleSubmit}>
         <CardContent>
           <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Input id="email" name="email" placeholder="Seu email" required />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Input
-                id="password"
-                name="password"
-                placeholder="Sua senha"
-                type="password"
-                required
-              />
-              {invalidEmail && (
-                <span className="text-red-500 text-center">
+            {invalidEmail ? (
+              <div className="flex flex-col space-y-1.5 border-solid border-destructive border-2 rounded-lg">
+                <Input
+                  id="email"
+                  name="email"
+                  placeholder="Seu email"
+                  required
+                  className=""
+                />
+              </div>
+            ) : (
+              <div className="flex flex-col space-y-1.5">
+                <Input
+                  id="email"
+                  name="email"
+                  placeholder="Seu email"
+                  required
+                />
+              </div>
+            )}
+            {invalidEmail ? (
+              <>
+                <div className="flex flex-col space-y-1.5 border-solid border-destructive border-2 rounded-lg">
+                  <Input
+                    id="password"
+                    name="password"
+                    placeholder="Sua senha"
+                    type="password"
+                    required
+                  />
+                </div>
+
+                <span className="text-primary text-center">
                   Usuário ou senha inválidos
                 </span>
-              )}
-            </div>
+              </>
+            ) : (
+              <div className="flex flex-col space-y-1.5">
+                <Input
+                  id="password"
+                  name="password"
+                  placeholder="Sua senha"
+                  type="password"
+                  required
+                />
+              </div>
+            )}
           </div>
         </CardContent>
         <CardFooter className="flex flex-col">
